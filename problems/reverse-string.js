@@ -1,13 +1,16 @@
 function reverseString(string) {
-  const revArr = [];
-  const strArr = string.split("");
-  strArr.forEach((el) => {
-    revArr.unshift(el);
-  });
+  if (typeof string !== "string") {
+    throw new TypeError("Input must be a string");
+  } else {
+    const revArr = [];
+    const strArr = string.split("");
+    strArr.forEach((el) => {
+      revArr.unshift(el);
+    });
 
-  return revArr.join("");
+    return revArr.join("");
+  }
 }
-
 //! Reg for loop solution
 // function reverseString(string) {
 //   const revArr = []
@@ -23,5 +26,6 @@ function reverseString(string) {
 // };
 console.log(reverseString("fun")); //"nuf"
 console.log(reverseString("gamecube")); //"ebucemag"
+// console.log(reverseString(99)); //"Please input a string"
 
 module.exports = reverseString;
